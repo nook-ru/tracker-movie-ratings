@@ -13,10 +13,10 @@ const keysParams = new Map()
 const trsKeys = new Map()
 
 document.querySelectorAll('#tor-tbl tbody tr').forEach(tr => {
-  const type = getForumType(tr.querySelector('td.f-name a').textContent)
+  const type = getForumType(tr.querySelector('td.f-name-col a').textContent)
   if (!type) { return }
 
-  const a = tr.querySelector('td.t-title a')
+  const a = tr.querySelector('td.t-title-col a')
   const { title, titleRu, year } = parseRutrackerTitle(a.textContent)
   if (!title) {
     setCellError(a.parentNode, errors.parsing)
